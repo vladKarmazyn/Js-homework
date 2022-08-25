@@ -84,8 +84,7 @@ function capsLock(str) {
     }
 
 
-
-
+   
 
     
 console.log(capsLock("cAPS"));
@@ -93,5 +92,34 @@ console.log(capsLock("Lock"));
 console.log(capsLock("wHY DO wE NEED cAPS lOCK?"));
 console.log(capsLock("FuNkY iS nOt CaPs!"));
 
+// Вирішив ще так 
+
+
+function capsLock1(str) {
+
+    str = str.split(' ')
+    let newStr = [];
+    for (let i = 0; i < str.length; i++) {
+     const word = str[i];
+     if (word[0] === word[0].toLowerCase() && word.slice(1) === word.slice(1).toUpperCase() || word === word.toUpperCase())
+     {
+      let firstLetter = word[0].toUpperCase();
+      let partOfWord  = word.slice(1).toLowerCase();
+      let newword = firstLetter + partOfWord;
+      newStr.push(newword);
+    
+     }
+     else {
+      newStr.push(word);
+     }
+    }
+    str = newStr.join(' ');
+    return str;
+    }
+    
+    console.log(capsLock1('cAPS'));
+    console.log(capsLock1('Lock'));
+    console.log(capsLock1('wHY DO wE NEED cAPS lOCK?'));
+    console.log(capsLock1('FuNkY iS nOt CaPs!'));
 
 
