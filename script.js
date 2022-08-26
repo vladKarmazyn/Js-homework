@@ -101,16 +101,18 @@ function capsLock1(str) {
     let newStr = [];
     for (let i = 0; i < str.length; i++) {
      const word = str[i];
-     if (word[0] === word[0].toLowerCase() && word.slice(1) === word.slice(1).toUpperCase() || word === word.toUpperCase())
+     if (word[0] === word[0].toLowerCase() && word.slice(1) === word.slice(1).toUpperCase())
      {
       let firstLetter = word[0].toUpperCase();
       let partOfWord  = word.slice(1).toLowerCase();
       let newword = firstLetter + partOfWord;
       newStr.push(newword);
     
+     } else if (word === word.toUpperCase()) {
+         newStr.push(word.toLowerCase());
      }
      else {
-      newStr.push(word);
+         newStr.push(word);
      }
     }
     str = newStr.join(' ');
